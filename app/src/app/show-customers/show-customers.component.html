@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Phone</th>
+    <th scope="col">Email</th>
+    <th scope="col">Address</th>
+    <th scope="col">City</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let customer of customers;">
+    <td>{{customer.name}}</td>
+    <td>{{customer.phone}}</td>
+    <td>{{customer.email}}</td>
+    <td>{{customer.address}}</td>
+    <td>{{customer.city}}</td>
+    <td>Actions</td>
+  </tr>
+
+
+  </tbody>
+</table>
+
+<button class="btn btn-primary" routerLink="/create-customer"> Create</button>

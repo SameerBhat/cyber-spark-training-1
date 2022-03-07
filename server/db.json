@@ -1,0 +1,76 @@
+{
+  "customers": [
+    {
+      "id": 1,
+      "name": "json-server 1",
+      "phone": "typicode",
+      "email": "asdsa",
+      "address": "asdsad",
+      "city": "asdsada"
+    },
+    {
+      "id": 2,
+      "name": "json-server 2",
+      "phone": "typicode",
+      "email": "asdsa",
+      "address": "asdsad",
+      "city": "asdsada"
+    },
+    {
+      "id": 3,
+      "name": "json-server 3",
+      "phone": "typicode",
+      "email": "asdsa",
+      "address": "asdsad",
+      "city": "asdsada"
+    },
+    {
+      "id": 4,
+      "name": "json-server 4",
+      "phone": "typicode",
+      "email": "asdsa",
+      "address": "asdsad",
+      "city": "asdsada"
+    },
+    {
+      "id": 5,
+      "name": "json-server 5",
+      "phone": "typicode",
+      "email": "asdsa",
+      "address": "asdsad",
+      "city": "asdsada"
+    },
+    {
+      "id": 6,
+      "name": "json-server 6",
+      "phone": "typicode",
+      "email": "asdsa",
+      "address": "asdsad",
+      "city": "asdsada"
+    },
+    {
+      "name": "Sameer Bhat",
+      "phone": "09906647766",
+      "email": "sameerbhat76@googlemail.com",
+      "address": "Srinagar, Near Tatoo ground Sabzi mandi , Batamaloo Srinagar",
+      "city": "Srinagar",
+      "id": 7
+    },
+    {
+      "name": "Sameer Bhat",
+      "phone": "09906647766",
+      "email": "sameerbhat76@googlemail.com",
+      "address": "Srinagar, Near Tatoo ground Sabzi mandi , Batamaloo Srinagar",
+      "city": "Srinagar",
+      "id": 8
+    },
+    {
+      "name": "John Doe",
+      "phone": "90902902345",
+      "email": "johndoetest@gmail.com",
+      "address": "sadfsadfas",
+      "city": "Sdad",
+      "id": 9
+    }
+  ]
+}

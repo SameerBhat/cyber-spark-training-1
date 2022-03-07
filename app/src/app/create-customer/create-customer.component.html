@@ -1,0 +1,36 @@
+<form>
+  {{form.value | json}}
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input id="name" type="text" class="form-control" placeholder="name" [formControl]="form.get('name')">
+  </div>
+
+
+  <div class="form-group mt-5">
+    <label for="phone">Phone</label>
+    <input id="phone" type="text" class="form-control" placeholder="phone" [formControl]="form.get('phone')">
+  </div>
+
+
+
+  <div class="form-group mt-5">
+    <label for="email">Email</label>
+    <input id="email" type="email" class="form-control" placeholder="email" [formControl]="form.get('email')">
+  </div>
+
+
+  <div class="form-group mt-5">
+    <label for="phone">Address</label>
+    <input id="address" type="text" class="form-control" placeholder="address" [formControl]="form.get('address')">
+  </div>
+
+
+  <div class="form-group mt-5 mb-5">
+    <label for="phone">City</label>
+    <input id="city" type="text" class="form-control" placeholder="city" [formControl]="form.get('city')">
+  </div>
+
+
+
+  <button class="btn btn-primary" type="button" (click)="formSubmitted($event)">Submit</button>
+</form>
