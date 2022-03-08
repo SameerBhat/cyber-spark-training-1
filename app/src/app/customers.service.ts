@@ -11,6 +11,8 @@ export interface Customer {
   city: string;
 }
 
+const API = 'http://localhost:3000/customers/'
+
 
 @Injectable({
   providedIn: 'root'
@@ -21,22 +23,22 @@ export class CustomersService {
 
 
   getCustomers(): Observable<Customer[]> {
-    return this.http.get<Customer[]>('http://localhost:3000/customers');
+    return this.http.get<Customer[]>(`${API}`);
   }
 
   saveCustomer(customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>('http://localhost:3000/customers', customer);
+    return this.http.post<Customer>(`${API}`, customer);
   }
 
   getCustomer(id: number): Observable<Customer> {
-    return this.http.get<Customer>('http://localhost:3000/customers/' + id);
+    return this.http.get<Customer>(`${API}/` + id);
   }
 
   updateCustomer(customer: Customer): Observable<Customer> {
-    return this.http.put<Customer>('http://localhost:3000/customers/' + customer.id, customer);
+    return this.http.put<Customer>(`${API}/` + customer.id, customer);
   }
 
   deleteCustomer(id: number): Observable<Customer>  {
-    return this.http.delete<Customer>('http://localhost:3000/customers/' + id);
+    return this.http.delete<Customer>(`${API}/` + id);
   }
 }
