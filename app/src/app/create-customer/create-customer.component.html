@@ -1,26 +1,50 @@
+<form class="col-md-5 shadow mx-auto">
+  <h2 class="text-center mb-3">Add new Customer</h2>
 
-<form>
-  {{form.value | json}}
-  <br>
-  <br>
-  {{form.errors | json}}
+  <app-text-field
+    [control]="form.get('name')"
+    label="Name"
+    placeholder="Name"
+    type="text"
+  ></app-text-field>
 
+  <app-text-field
+    [control]="form.get('phone')"
+    label="Phone"
+    placeholder="phone"
+    type="text"
+  ></app-text-field>
 
-    <app-text-field [control]="form.get('name')" label="Name" placeholder="Name"></app-text-field>
+  <app-text-field
+    [control]="form.get('email')"
+    label="Email"
+    placeholder="email"
+    type="email"
+  ></app-text-field>
 
-   <app-text-field [control]="form.get('phone')"  label="Phone" placeholder="phone"></app-text-field>
+  <app-text-field
+    [control]="form.get('address')"
+    label="Address"
+    placeholder="address"
+  ></app-text-field>
 
+  <app-text-field
+    [control]="form.get('city')"
+    label="City"
+    placeholder="city"
+  ></app-text-field>
 
-  <app-text-field [control]="form.get('email')"  label="Email" placeholder="email" type="email"></app-text-field>
-
-
-  <app-text-field [control]="form.get('address')"  label="Address" placeholder="address" ></app-text-field>
-
-  <app-text-field [control]="form.get('city')"  label="City" placeholder="city"></app-text-field>
-
-
-  <button class="btn btn-primary" type="button" [disabled]="form.invalid" (click)="formSubmitted($event)">
-
+  <div class="d-flex gap-1">
+    <button
+    class="btn btn-primary col-6"
+    type="button"
+    [disabled]="form.invalid"
+    (click)="formSubmitted($event)"
+  >
     {{isEditMode() ? 'Update': 'Create'}}
   </button>
+  <button class="btn btn-danger col-6" routerLink="/show-customers">
+    Discard
+  </button>
+  </div>
 </form>

@@ -1,6 +1,11 @@
-<table class="table">
-  <thead>
+<div class="d-flex justify-content-end">
+<button class="btn btn-primary mt-5 customBtn" routerLink="/create-customer"> Add Customer</button>
+</div>
+
+<table class="table table-borderless mt-5">
+  <thead class="border-0" style="line-height: 50px;">
   <tr>
+    <th scope="col">Customer Id</th>
     <th scope="col">Name</th>
     <th scope="col">Phone</th>
     <th scope="col">Email</th>
@@ -11,14 +16,15 @@
   </thead>
   <tbody>
   <tr *ngFor="let customer of customers;">
-    <td>{{customer.name}}</td>
-    <td>{{customer.phone}}</td>
-    <td>{{customer.email}}</td>
-    <td>{{customer.address}}</td>
-    <td>{{customer.city}}</td>
+    <td style="LINE-HEIGHT:50px; padding-left: 2rem; font-weight: 700;">{{customer.id}}</td>
+    <td style="LINE-HEIGHT:50px">{{customer.name}}</td>
+    <td style="LINE-HEIGHT:50px">{{customer.phone}}</td>
+    <td style="LINE-HEIGHT:50px">{{customer.email}}</td>
+    <td style="LINE-HEIGHT:50px">{{customer.address}}</td>
+    <td style="LINE-HEIGHT:50px">{{customer.city}}</td>
     <td>
-      <button class="btn btn-secondary btn-sm " style="margin-right: 5px" [routerLink]="'/update-customer/'+customer.id">Edit</button>
-      <button class="btn btn-danger btn-sm" (click)="deleteCustomer(customer.id)">Delete</button>
+      <button class="btn btn-primary  " style="margin-right: 5px" [routerLink]="'/update-customer/'+customer.id">Edit</button>
+      <button class="btn btn-danger " (click)="deleteCustomer(customer.id)">Delete</button>
     </td>
   </tr>
 
@@ -26,4 +32,3 @@
   </tbody>
 </table>
 
-<button class="btn btn-primary" routerLink="/create-customer"> Create</button>

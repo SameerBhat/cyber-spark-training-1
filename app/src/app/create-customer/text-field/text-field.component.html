@@ -1,17 +1,21 @@
-<div class="form-group">
-<label for="name">{{label}}</label>
-<input *ngIf="col ==1" id="name" [type]="type" class="form-control"
-       [ngClass]="{ 'is-invalid': control.invalid && control.dirty  }" [placeholder]="placeholder"
-       [formControl]="control">
-  <textarea *ngIf="col > 1" [ngClass]="{ 'is-invalid': control.invalid && control.dirty  }" [placeholder]="placeholder"
-            [formControl]="control" [cols]="col"></textarea>
-<div class="invalid-feedback"
-     *ngIf=" control.invalid && control.dirty && control.hasError('required') ">
-    This field is required.
-</div>
-<div class="invalid-feedback"
-     *ngIf=" control.invalid && control.dirty && control.hasError('minlength') ">
-    Length of this field is {{control.errors['minLength']}}
-</div>
 
-</div>
+<label class="form-label">{{ label }}</label>
+<input class="form-control mb-3" type="{{ type}}" placeholder="{{ placeholder }}" [ngClass]="{ 'is-invalid' : showErrors() }" [formControl]="control" />
+
+<ng-container
+    *ngIf="showErrors()">
+
+    <div class="invalid-feedback" *ngIf="control.errors.required">
+      Field cannot be empty
+    </div>
+    <div class="invalid-feedback" *ngIf="control.errors.minlength">
+      Value cannot be less than {{ control.errors.minlength.requiredLength}} Characters
+    </div>
+    <div class="invalid-feedback" *ngIf="control.errors.maxlength">
+      Value cannot be more than {{ control.errors.maxlength.requiredLength}} Characters
+    </div>
+    <div class="invalid-feedback" *ngIf="control.errors.pattern">
+       Invalid Email
+    </div>
+    
+  </ng-container>
