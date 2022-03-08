@@ -1,5 +1,5 @@
 <form class="col-md-5 shadow mx-auto">
-  <h2 class="text-center mb-3">Add new Customer</h2>
+  <h2 class="text-center mb-3">{{isEditMode() ? 'Edit Customer': 'Add Customer'}}</h2>
 
   <app-text-field
     [control]="form.get('name')"
