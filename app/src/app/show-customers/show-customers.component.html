@@ -16,7 +16,10 @@
     <td>{{customer.email}}</td>
     <td>{{customer.address}}</td>
     <td>{{customer.city}}</td>
-    <td>Actions</td>
+    <td>
+      <button class="btn btn-secondary btn-sm " style="margin-right: 5px" [routerLink]="'/update-customer/'+customer.id">Edit</button>
+      <button class="btn btn-danger btn-sm" (click)="deleteCustomer(customer.id)">Delete</button>
+    </td>
   </tr>
 
 

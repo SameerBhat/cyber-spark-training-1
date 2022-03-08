@@ -1,22 +1,6 @@
 {
   "customers": [
     {
-      "id": 1,
-      "name": "json-server 1",
-      "phone": "typicode",
-      "email": "asdsa",
-      "address": "asdsad",
-      "city": "asdsada"
-    },
-    {
-      "id": 2,
-      "name": "json-server 2",
-      "phone": "typicode",
-      "email": "asdsa",
-      "address": "asdsad",
-      "city": "asdsada"
-    },
-    {
       "id": 3,
       "name": "json-server 3",
       "phone": "typicode",
@@ -71,6 +55,14 @@
       "address": "sadfsadfas",
       "city": "Sdad",
       "id": 9
+    },
+    {
+      "id": 10,
+      "name": "4444444",
+      "phone": "90902902345",
+      "email": "johndoetest@gmail.com",
+      "address": "sadfsadfas",
+      "city": "Sdad"
     }
   ]
 }

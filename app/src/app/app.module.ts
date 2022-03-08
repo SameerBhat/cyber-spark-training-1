@@ -7,13 +7,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { CreateCustomerComponent } from './create-customer/create-customer.component';
 import { ShowCustomersComponent } from './show-customers/show-customers.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { TextFieldComponent } from './create-customer/text-field/text-field.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateCustomerComponent,
-    ShowCustomersComponent
+    ShowCustomersComponent,
+    TextFieldComponent
   ],
   imports: [
     BrowserModule,

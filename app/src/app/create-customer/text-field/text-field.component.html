@@ -1,0 +1,17 @@
+<div class="form-group">
+<label for="name">{{label}}</label>
+<input *ngIf="col ==1" id="name" [type]="type" class="form-control"
+       [ngClass]="{ 'is-invalid': control.invalid && control.dirty  }" [placeholder]="placeholder"
+       [formControl]="control">
+  <textarea *ngIf="col > 1" [ngClass]="{ 'is-invalid': control.invalid && control.dirty  }" [placeholder]="placeholder"
+            [formControl]="control" [cols]="col"></textarea>
+<div class="invalid-feedback"
+     *ngIf=" control.invalid && control.dirty && control.hasError('required') ">
+    This field is required.
+</div>
+<div class="invalid-feedback"
+     *ngIf=" control.invalid && control.dirty && control.hasError('minlength') ">
+    Length of this field is {{control.errors['minLength']}}
+</div>
+
+</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Customer, CustomersService} from "../customers.service";
+import {Customer, CustomersService} from '../customers.service';
 
 @Component({
   selector: 'app-show-customers',
@@ -20,5 +20,15 @@ export class ShowCustomersComponent implements OnInit {
 
 
   ngOnInit(): void {
+  }
+
+  deleteCustomer(id: number): void {
+    if (confirm('Are you sure?')){
+    this.customerService.deleteCustomer(id).subscribe(res => {
+      window.location.reload();
+    });
+    }
+
+
   }
 }

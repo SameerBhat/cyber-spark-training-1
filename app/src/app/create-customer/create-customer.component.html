@@ -1,36 +1,26 @@
+
 <form>
   {{form.value | json}}
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input id="name" type="text" class="form-control" placeholder="name" [formControl]="form.get('name')">
-  </div>
+  <br>
+  <br>
+  {{form.errors | json}}
 
 
-  <div class="form-group mt-5">
-    <label for="phone">Phone</label>
-    <input id="phone" type="text" class="form-control" placeholder="phone" [formControl]="form.get('phone')">
-  </div>
+    <app-text-field [control]="form.get('name')" label="Name" placeholder="Name"></app-text-field>
+
+   <app-text-field [control]="form.get('phone')"  label="Phone" placeholder="phone"></app-text-field>
 
 
-
-  <div class="form-group mt-5">
-    <label for="email">Email</label>
-    <input id="email" type="email" class="form-control" placeholder="email" [formControl]="form.get('email')">
-  </div>
+  <app-text-field [control]="form.get('email')"  label="Email" placeholder="email" type="email"></app-text-field>
 
 
-  <div class="form-group mt-5">
-    <label for="phone">Address</label>
-    <input id="address" type="text" class="form-control" placeholder="address" [formControl]="form.get('address')">
-  </div>
+  <app-text-field [control]="form.get('address')"  label="Address" placeholder="address" ></app-text-field>
+
+  <app-text-field [control]="form.get('city')"  label="City" placeholder="city"></app-text-field>
 
 
-  <div class="form-group mt-5 mb-5">
-    <label for="phone">City</label>
-    <input id="city" type="text" class="form-control" placeholder="city" [formControl]="form.get('city')">
-  </div>
+  <button class="btn btn-primary" type="button" [disabled]="form.invalid" (click)="formSubmitted($event)">
 
-
-
-  <button class="btn btn-primary" type="button" (click)="formSubmitted($event)">Submit</button>
+    {{isEditMode() ? 'Update': 'Create'}}
+  </button>
 </form>

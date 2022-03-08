@@ -9,6 +9,10 @@ const routes: Routes = [
     component: CreateCustomerComponent
   },
   {
+    path: 'update-customer/:id',
+    component: CreateCustomerComponent
+  },
+  {
     path: 'show-customers',
     component: ShowCustomersComponent
   }
