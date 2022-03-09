@@ -1,0 +1,26 @@
+
+<form>
+  {{form.value | json}}
+  <br>
+  <br>
+  {{form.errors | json}}
+
+
+    <app-text-field [control]="form.get('amount')" label="amount" placeholder="amount"></app-text-field>
+
+   <app-text-field [control]="form.get('description')"  label="description" placeholder="description"></app-text-field>
+
+
+  <app-text-field [control]="form.get('quantity')"  label="quantity" placeholder="quantity" type="number"></app-text-field>
+
+
+  <app-text-field [control]="form.get('customer_id')"  label="customer_id" placeholder="customer_id" ></app-text-field>
+
+  <app-text-field [control]="form.get('payment_status')"  label="payment_status" placeholder="payment_status"></app-text-field>
+
+
+  <button class="btn btn-primary" type="button" [disabled]="form.invalid" (click)="formSubmitted($event)">
+
+    {{isEditMode() ? 'Update': 'Create'}}
+  </button>
+</form>

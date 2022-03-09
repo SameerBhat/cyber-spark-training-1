@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Customer, CustomersService} from '../customers.service';
+import {Customer, CustomersService} from '../_services/customers.service';
+import {CUSTOMER_PATH, CUSTOMER_UPDATE_PATH} from '../customer.constants';
 
 @Component({
   selector: 'app-show-customers',
@@ -9,6 +10,9 @@ import {Customer, CustomersService} from '../customers.service';
 export class ShowCustomersComponent implements OnInit {
 
   customers: Customer[] = [];
+  path = `/${CUSTOMER_PATH}/${CUSTOMER_UPDATE_PATH}`;
+  customerPathPrefix = `/${CUSTOMER_PATH}/${CUSTOMER_UPDATE_PATH}/`;
+
 
 
   constructor(private customerService: CustomersService) {

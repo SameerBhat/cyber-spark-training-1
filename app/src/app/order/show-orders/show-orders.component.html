@@ -1,0 +1,27 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">amount</th>
+    <th scope="col">description</th>
+    <th scope="col">payment_status</th>
+    <th scope="col">quantity</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let order of orders;">
+    <td>{{order.amount}}</td>
+    <td>{{order.description}}</td>
+    <td>{{order.payment_status}}</td>
+    <td>{{order.quantity}}</td>
+    <td>
+      <button class="btn btn-secondary btn-sm " style="margin-right: 5px" [routerLink]="'/orders/update-order/'+order.id">Edit</button>
+      <button class="btn btn-danger btn-sm" (click)="deleteOrder(order.id)">Delete</button>
+    </td>
+  </tr>
+
+
+  </tbody>
+</table>
+
+<button class="btn btn-primary" routerLink="/orders/create-order"> Create</button>

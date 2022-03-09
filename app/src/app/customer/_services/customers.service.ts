@@ -17,26 +17,28 @@ export interface Customer {
 })
 export class CustomersService {
 
+  baseUrl = 'http://localhost:3000/';
+
   constructor(private http: HttpClient) { }
 
 
   getCustomers(): Observable<Customer[]> {
-    return this.http.get<Customer[]>('http://localhost:3000/customers');
+    return this.http.get<Customer[]>(this.baseUrl + 'customers');
   }
 
   saveCustomer(customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>('http://localhost:3000/customers', customer);
+    return this.http.post<Customer>(this.baseUrl + 'customers', customer);
   }
 
   getCustomer(id: number): Observable<Customer> {
-    return this.http.get<Customer>('http://localhost:3000/customers/' + id);
+    return this.http.get<Customer>(this.baseUrl + 'customers/' + id);
   }
 
   updateCustomer(customer: Customer): Observable<Customer> {
-    return this.http.put<Customer>('http://localhost:3000/customers/' + customer.id, customer);
+    return this.http.put<Customer>(this.baseUrl + 'customers/' + customer.id, customer);
   }
 
   deleteCustomer(id: number): Observable<Customer>  {
-    return this.http.delete<Customer>('http://localhost:3000/customers/' + id);
+    return this.http.delete<Customer>(this.baseUrl + 'customers/' + id);
   }
 }

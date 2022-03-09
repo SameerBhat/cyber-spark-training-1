@@ -17,7 +17,7 @@
     <td>{{customer.address}}</td>
     <td>{{customer.city}}</td>
     <td>
-      <button class="btn btn-secondary btn-sm " style="margin-right: 5px" [routerLink]="'/update-customer/'+customer.id">Edit</button>
+      <button class="btn btn-secondary btn-sm " style="margin-right: 5px" [routerLink]="customerPathPrefix+customer.id">Edit</button>
       <button class="btn btn-danger btn-sm" (click)="deleteCustomer(customer.id)">Delete</button>
     </td>
   </tr>
@@ -26,4 +26,6 @@
   </tbody>
 </table>
 
-<button class="btn btn-primary" routerLink="/create-customer"> Create</button>
+<app-button variant="primary"  [routerLink]="path">
+  Create Customer
+</app-button>

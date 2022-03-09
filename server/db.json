@@ -33,36 +33,38 @@
       "city": "asdsada"
     },
     {
-      "name": "Sameer Bhat",
-      "phone": "09906647766",
-      "email": "sameerbhat76@googlemail.com",
-      "address": "Srinagar, Near Tatoo ground Sabzi mandi , Batamaloo Srinagar",
-      "city": "Srinagar",
-      "id": 7
+      "id": 7,
+      "name": "sameerbhat76@googlemail.com",
+      "phone": "+919906647766",
+      "email": "sameerbhat76@gmail.com",
+      "address": "17 Hannah House",
+      "city": "Huddersfield"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "amount": "100",
+      "description": "asdasdas",
+      "quantity": "12312",
+      "customer_id": "12",
+      "payment_status": "PAID"
     },
     {
-      "name": "Sameer Bhat",
-      "phone": "09906647766",
-      "email": "sameerbhat76@googlemail.com",
-      "address": "Srinagar, Near Tatoo ground Sabzi mandi , Batamaloo Srinagar",
-      "city": "Srinagar",
-      "id": 8
+      "id": 2,
+      "amount": "200",
+      "description": "asdasdas",
+      "quantity": "12312",
+      "customer_id": "12",
+      "payment_status": "PAID"
     },
     {
-      "name": "John Doe",
-      "phone": "90902902345",
-      "email": "johndoetest@gmail.com",
-      "address": "sadfsadfas",
-      "city": "Sdad",
-      "id": 9
-    },
-    {
-      "id": 10,
-      "name": "4444444",
-      "phone": "90902902345",
-      "email": "johndoetest@gmail.com",
-      "address": "sadfsadfas",
-      "city": "Sdad"
+      "id": 3,
+      "amount": "Sameer Bhat 2321",
+      "description": "Sameer Bhat 12321",
+      "payment_status": "Sameer Bhat 123123",
+      "customer_id": "Sameer Bhat 123123",
+      "quantity": "Sameer Bhat 123123"
     }
   ]
 }

@@ -1,21 +1,17 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import {CreateCustomerComponent} from './create-customer/create-customer.component';
-import {ShowCustomersComponent} from './show-customers/show-customers.component';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
+import {CUSTOMER_PATH} from './customer/customer.constants';
+import {ORDER_PATH} from './order/customer.constants';
 
 const routes: Routes = [
   {
-    path: 'create-customer',
-    component: CreateCustomerComponent
+    path: CUSTOMER_PATH,
+    loadChildren: () => import('./customer/customer.module').then(m => m.CustomerModule)
   },
   {
-    path: 'update-customer/:id',
-    component: CreateCustomerComponent
+    path: ORDER_PATH,
+    loadChildren: () => import('./order/order.module').then(m => m.OrderModule)
   },
-  {
-    path: 'show-customers',
-    component: ShowCustomersComponent
-  }
 ];
 
 @NgModule({
