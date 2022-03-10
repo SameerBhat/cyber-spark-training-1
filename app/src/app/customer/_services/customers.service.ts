@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {BaseCrudService, BaseItem} from '../base.crud.service';
+import {CUSTOMER_PATH} from '../customer.constants';
 
-export interface Customer {
-  id?: number;
+export interface Customer extends BaseItem{
   name: string;
   phone: string;
   email: string;
@@ -15,30 +15,16 @@ export interface Customer {
 @Injectable({
   providedIn: 'root'
 })
-export class CustomersService {
-
-  baseUrl = 'http://localhost:3000/';
-
-  constructor(private http: HttpClient) { }
+export class CustomersService extends BaseCrudService<Customer> {
 
 
-  getCustomers(): Observable<Customer[]> {
-    return this.http.get<Customer[]>(this.baseUrl + 'customers');
+  constructor(public http: HttpClient) {
+    super(http);
   }
 
-  saveCustomer(customer: Customer): Observable<Customer> {
-    return this.http.post<Customer>(this.baseUrl + 'customers', customer);
+  get suffix(): string {
+    return CUSTOMER_PATH;
   }
 
-  getCustomer(id: number): Observable<Customer> {
-    return this.http.get<Customer>(this.baseUrl + 'customers/' + id);
-  }
 
-  updateCustomer(customer: Customer): Observable<Customer> {
-    return this.http.put<Customer>(this.baseUrl + 'customers/' + customer.id, customer);
-  }
-
-  deleteCustomer(id: number): Observable<Customer>  {
-    return this.http.delete<Customer>(this.baseUrl + 'customers/' + id);
-  }
 }

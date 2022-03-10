@@ -1,0 +1,20 @@
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col" *ngFor="let column of columns;">{{column.label}}</th>
+    <th scope="col" *ngIf="showActions">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of rows;">
+
+    <td *ngFor="let column of columns;">{{row[column.key]}}</td>
+    <td *ngIf="showActions">
+      <button class="btn btn-secondary btn-sm " style="margin-right: 5px">Edit</button>
+      <button class="btn btn-danger btn-sm" (click)="onClickDelete.emit(row.id)">Delete</button>
+    </td>
+  </tr>
+
+
+  </tbody>
+</table>

@@ -27,7 +27,7 @@ export class CreateOrderComponent implements OnInit {
       console.log(params);
       const {id} = params;
       if (id){
-     this.orderService.getOrder(id).subscribe(resp => {
+     this.orderService.getItem(id).subscribe(resp => {
        this.form.patchValue(resp);
      });
    }
@@ -40,11 +40,11 @@ export class CreateOrderComponent implements OnInit {
   formSubmitted(event): void {
     const order: Order = this.form.value;
     if (this.isEditMode()){
-      this.orderService.updateOrder(order).subscribe(res => {
+      this.orderService.updateItem(order).subscribe(res => {
         this.routingService.navigateByUrl('/show-orders');
       });
     }else{
-      this.orderService.saveOrder(order).subscribe(res => {
+      this.orderService.saveItem(order).subscribe(res => {
         this.routingService.navigateByUrl('/show-orders');
       });
     }

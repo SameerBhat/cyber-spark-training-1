@@ -1,14 +1,6 @@
 {
   "customers": [
     {
-      "id": 3,
-      "name": "json-server 3",
-      "phone": "typicode",
-      "email": "asdsa",
-      "address": "asdsad",
-      "city": "asdsada"
-    },
-    {
       "id": 4,
       "name": "json-server 4",
       "phone": "typicode",

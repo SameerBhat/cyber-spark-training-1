@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Customer, CustomersService} from '../_services/customers.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {CUSTOMER_UPDATE_PATH} from '../customer.constants';
+import {CUSTOMER_PATH, CUSTOMER_SHOW_PATH, CUSTOMER_UPDATE_PATH} from '../customer.constants';
 
 @Component({
   selector: 'app-create-customer',
@@ -27,7 +27,7 @@ export class CreateCustomerComponent implements OnInit {
     this.route.params.subscribe(({id}) => {
    if (id){
 
-     this.customerService.getCustomer(id).subscribe(resp => {
+     this.customerService.getItem(id).subscribe(resp => {
        this.form.patchValue(resp);
      });
    }
@@ -40,12 +40,12 @@ export class CreateCustomerComponent implements OnInit {
   formSubmitted(event): void {
     const customer: Customer = this.form.value;
     if (this.isEditMode()){
-      this.customerService.updateCustomer(customer).subscribe(res => {
-        this.routingService.navigateByUrl('/' + CUSTOMER_UPDATE_PATH);
+      this.customerService.updateItem(customer).subscribe(res => {
+        this.routingService.navigateByUrl(CUSTOMER_PATH + '/' + CUSTOMER_SHOW_PATH);
       });
     }else{
-      this.customerService.saveCustomer(customer).subscribe(res => {
-        this.routingService.navigateByUrl('/' + CUSTOMER_UPDATE_PATH);
+      this.customerService.saveItem(customer).subscribe(res => {
+        this.routingService.navigateByUrl(CUSTOMER_PATH + '/' + CUSTOMER_SHOW_PATH);
       });
     }
 
